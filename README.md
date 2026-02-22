@@ -220,6 +220,4 @@ make tensorboard
 ```
 </details>
 
-## **Licença**
 
-This project is licensed under the MIT license - see archive [LICENSE](https://github.com/Nicolasalan/reinforcement/blob/main/LICENSE.md) for details.
