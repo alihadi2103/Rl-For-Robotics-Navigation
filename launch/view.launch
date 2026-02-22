@@ -1,0 +1,26 @@
+<launch>
+     <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find reinforcement)/models/" />
+
+     <arg name="world_name"        default="simulation.world"/>
+     <arg name="gui"               default="true"/>
+
+     <arg name="model_target"      default="$(find reinforcement)/models/target.sdf"/>
+
+     <!-- start gazebo server -->
+     <param name="/use_sim_time" value="true"/>
+     <node name="gazebo" pkg="gazebo_ros" type="gzserver" output="screen"
+	    args="--verbose $(find reinforcement)/world/$(arg world_name)" />     
+
+    <!-- start gazebo client -->
+    <group if="$(arg gui)">
+        <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" output="screen" />
+    </group>
+
+     <!-- Launch Robot -->
+     <include file="$(find reinforcement)/launch/load.launch">
+     </include>
+
+
+     <!-- Launch Objects -->
+     <node name="spawn_model_target"   pkg="gazebo_ros" type="spawn_model" args="-file $(arg model_target) -sdf -model target -x 0 -y -2.0 -z 0"/>
+</launch>
