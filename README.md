@@ -153,16 +153,6 @@ action_dim: 2                     # angular and linear
 time_delta: 0.1                   # 10 Hz
 noise_sigma: 0.5                  # noise for the laser scan
 ```
-For training, the robot Hera from the [RoboFEI At Home](https://github.com/robofei-home) team was used, which is intended for domestic use.
-  > **Note** :
-  > There are a wide variety of parameters in this config.yaml file, but most are defaults. In addition, they are already configured for use by the AWS bookstore world and the Hera robot.
-
-<div align="center">
-     <img src="https://raw.githubusercontent.com/Home-Environment-Robot-Assistant/hera_description/master/doc/hera2020.png" alt="Hera Robot" width="350px">
-</div>
-
-  > **Note** :
-  > If necessary, use the Makefile help feature, where all available commands are listed. To use it, run the command `make help`.
 
 ## Training Agent
 
